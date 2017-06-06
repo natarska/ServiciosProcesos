@@ -6,8 +6,8 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
-
 
 <GridPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="544.0" prefWidth="472.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="psp.michat_client.WindowChatController">
   <columnConstraints>
@@ -17,12 +17,12 @@
   </columnConstraints>
   <rowConstraints>
       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="320.0" minHeight="10.0" prefHeight="320.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="192.0" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="91.0" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
-      <TextField fx:id="_text" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" GridPane.columnSpan="2" GridPane.rowIndex="3">
+      <TextField fx:id="_text" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" promptText="User to start chat" GridPane.columnSpan="2" GridPane.rowIndex="2">
          <padding>
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
          </padding>
@@ -30,15 +30,20 @@
             <Insets bottom="50.0" left="15.0" right="15.0" top="50.0" />
          </GridPane.margin>
       </TextField>
-      <Button mnemonicParsing="false" onAction="#onEnviar" text="ENVIAR" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
-         <GridPane.margin>
-            <Insets />
-         </GridPane.margin>
-      </Button>
-      <TextArea prefHeight="200.0" prefWidth="200.0" style="-fx-border-width: 2px; -fx-background-color: yellow;" GridPane.columnSpan="3" GridPane.rowSpan="3">
+      <TextArea prefHeight="200.0" prefWidth="200.0" style="-fx-border-width: 2px; -fx-background-color: yellow;" GridPane.columnSpan="3" GridPane.rowSpan="2">
          <GridPane.margin>
             <Insets bottom="10.0" left="50.0" right="50.0" top="10.0" />
          </GridPane.margin>
       </TextArea>
+      <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" GridPane.columnSpan="3" GridPane.rowIndex="3">
+         <children>
+            <Button fx:id="btnLogin" mnemonicParsing="false" onAction="#onLogin" text="Login" HBox.hgrow="ALWAYS">
+               <HBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+      <Button fx:id="btnEnvio" mnemonicParsing="false" onAction="#onEnviar" text="ENVIAR" GridPane.columnIndex="2" GridPane.rowIndex="2" />
    </children>
 </GridPane>
